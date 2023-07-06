@@ -6,11 +6,58 @@
     <link rel="shortcut icon" href="{{ asset('/images/favicon.ico') }}">
 <script src="https://cdn.tailwindcss.com"></script>
 
+
 </head>
 <body>
 
 
-<img src="images/moti-logo.png">
+<header class="flex justify-between items-center py-4 px-8 text-gray-800">
+  <div>
+    <h1 class="text-xl font-bold">ゲーミフィケーター</h1>
+    <p>Boost Your Motivation</p>
+  </div>
+  <nav class="hidden sm:block">
+    <ul class="flex space-x-4">
+      <li><a href="#" class="text-gray-800">点数設定</a></li>
+      <li><a href="#" class="text-gray-800">ごほうび編集</a></li>
+      <li><a href="#" class="text-gray-800">ログイン/新規登録</a></li>
+    </ul>
+  </nav>
+  <div class="sm:hidden">
+    <!-- ハンバーガーメニューアイコン -->
+    <button type="button" class="text-gray-800 hover:text-gray-600 focus:outline-none focus:text-gray-600" aria-label="メニューを開く" id="menu-toggle">
+      <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+    <!-- ドロップダウンメニュー -->
+    <div class="hidden opacity-0 transition-opacity duration-300" id="menu-dropdown">
+      <ul class="mt-2 space-y-2">
+        <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">点数設定</a></li>
+        <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">ごほうび編集</a></li>
+        <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">ログイン/新規登録</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<script>
+  // メニューのトグル
+  document.getElementById('menu-toggle').addEventListener('click', function() {
+    var dropdown = document.getElementById('menu-dropdown');
+    dropdown.classList.toggle('hidden');
+    setTimeout(function() {
+      dropdown.classList.toggle('opacity-0');
+    }, 10);
+  });
+</script>
+
+
+
+
+
+
+<img src="images/moti-logo2.png">
 
 
 
@@ -23,5 +70,7 @@
     @if(isset($number))
         <h2>Entered Number: {{ $number }}</h2>
     @endif
+
+
 </body>
 </html>
