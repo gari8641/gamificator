@@ -15,6 +15,13 @@ class CreateIncentivesTable extends Migration
     {
         Schema::create('incentives', function (Blueprint $table) {
             $table->id();
+            $table->integer('user_id');
+            $table->string('incentive');
+            $table->string('url');
+            $table->integer('required_points');
+            $table->boolean('complete_flag');
+            $table->boolean('delete_flag');
+            $table->integer('sort_number');
             $table->timestamps();
         });
     }
