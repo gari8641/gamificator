@@ -14,7 +14,7 @@ class AddUserIdToPointsTable extends Migration
     public function up()
     {
         Schema::table('points', function (Blueprint $table) {
-            //
+          $table->integer('user_id'); //フィード追加
         });
     }
 
@@ -26,7 +26,7 @@ class AddUserIdToPointsTable extends Migration
     public function down()
     {
         Schema::table('points', function (Blueprint $table) {
-            //
+          $table->dropColumn('user_id'); //フィールド削除
         });
     }
 }
