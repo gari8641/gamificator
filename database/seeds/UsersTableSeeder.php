@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class PointsTableSeeder extends Seeder
+class UsersTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,7 +12,5 @@ class PointsTableSeeder extends Seeder
     public function run()
     {
         //
-      'user_id' => 1,
-      'point' => 0,
     }
 }
