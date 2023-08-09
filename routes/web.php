@@ -21,3 +21,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'NumberController@index')->name('number.index');
 Route::post('/show', 'NumberController@show')->name('number.show');
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
