@@ -17,8 +17,8 @@ use Illuminate\Support\Facades\Route;
 //    return view('welcome');
 //});
 
-//Route::get('/', 'GamiController@index');
-Route::get('/', 'NumberController@index')->name('number.index');
+Route::get('/', 'GamiController@index');
+//Route::get('/', 'NumberController@index')->name('number.index');
 Route::post('/show', 'NumberController@show')->name('number.show');
 
 
