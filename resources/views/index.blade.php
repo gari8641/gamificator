@@ -20,7 +20,18 @@
     <ul class="flex space-x-4">
       <li><a href="#" class="text-gray-800">点数設定</a></li>
       <li><a href="#" class="text-gray-800">ごほうび編集</a></li>
-      <li><a href="#" class="text-gray-800">ログイン/新規登録</a></li>
+      <!-- auth関連 -->
+      @if (Route::has('login'))
+        @auth
+          <li><a href="{{ url('/home') }}" class="text-gray-800">Home</a></li>
+        @else
+          <li><a href="{{ route('login') }}" class="text-gray-800">Login</a></li>
+          @if (Route::has('register'))
+            <li><a href="{{ route('register') }}" class="text-gray-800">Register</a></li>
+          @endif
+        @endauth
+      @endif
+      <!-- /auth関連 -->
     </ul>
   </nav>
   <div class="sm:hidden">
@@ -35,11 +46,24 @@
       <ul class="mt-2 space-y-2">
         <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">点数設定</a></li>
         <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">ごほうび編集</a></li>
-        <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">ログイン/新規登録</a></li>
+        <!-- auth関連 -->
+        @if (Route::has('login'))
+          @auth
+            <li><a href="{{ url('/home') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Home</a></li>
+          @else
+            <li><a href="{{ route('login') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Login</a></li>
+            @if (Route::has('register'))
+              <li><a href="{{ route('register') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Register</a></li>
+            @endif
+          @endauth
+        @endif
+        <!-- /auth関連 -->
       </ul>
     </div>
   </div>
 </header>
+
+あいうえお
 
 <script>
   // メニューのトグル
@@ -53,27 +77,8 @@
 </script>
 
 
-<!--auth関連-->
-
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-
 
 <img src="images/moti-logo2.png">
-
-
 
     <form action="{{ route('number.show') }}" method="post" class="inline-block bg-red-200 hover:bg-red-400 py-2 px-6 rounded-full shadow-md">
         @csrf
@@ -84,7 +89,6 @@
     @if(isset($number))
         <h2>Entered Number: {{ $number }}</h2>
     @endif
-
 
 </body>
 </html>
