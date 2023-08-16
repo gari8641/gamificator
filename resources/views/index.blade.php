@@ -25,9 +25,9 @@
         @auth
           <li><a href="{{ url('/home') }}" class="text-gray-800">Home</a></li>
         @else
-          <li><a href="{{ route('login') }}" class="text-gray-800">Login</a></li>
+          <li><a href="{{ route('login') }}" class="text-gray-800">{{__('Login')}}</a></li>
           @if (Route::has('register'))
-            <li><a href="{{ route('register') }}" class="text-gray-800">Register</a></li>
+            <li><a href="{{ route('register') }}" class="text-gray-800">{{__('Register')}}</a></li>
           @endif
         @endauth
       @endif
@@ -51,9 +51,9 @@
           @auth
             <li><a href="{{ url('/home') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Home</a></li>
           @else
-            <li><a href="{{ route('login') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Login</a></li>
+            <li><a href="{{ route('login') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">{{__('Login')}}</a></li>
             @if (Route::has('register'))
-              <li><a href="{{ route('register') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Register</a></li>
+              <li><a href="{{ route('register') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">{{__('Register')}}</a></li>
             @endif
           @endauth
         @endif
