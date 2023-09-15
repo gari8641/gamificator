@@ -29,7 +29,7 @@
     <header class="flex justify-between items-center py-4 px-8 text-gray-800">
         <div>
             <a class="navbar-brand" href="{{ url('/') }}">
-                {{ config('app.name', 'げーミフィケーター') }}
+                {{ config('app.name', 'ゲーミフィケーター') }}
             </a>
             <button type="button" class="sm:hidden text-gray-800 hover:text-gray-600 focus:outline-none focus:text-gray-600" aria-label="メニューを開く" id="menu-toggle">
                 <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -39,8 +39,8 @@
         </div>
         <nav class="hidden sm:block">
             <ul class="flex space-x-4">
-                <li><a href="#" class="text-gray-800">点数設定</a></li>
-                <li><a href="#" class="text-gray-800">ごほうび編集</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">点数設定</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">ごほうび編集</a></li>
                 <!-- auth関連 -->
                 @guest
                     <li class="nav-item">
