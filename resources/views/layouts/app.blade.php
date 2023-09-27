@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>@yield('title') | {{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -18,59 +18,67 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+
+    <link rel="shortcut icon" href="{{ asset('/images/favicon.ico') }}">
+<script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Gamificator') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
+<!-- PC用メニュー -->
+<nav class="hidden sm:block p-4">
+<header class="flex justify-between items-center py-4 px-8 text-gray-800">
+    <div>
+    <a href="/"><h1 class="text-xl font-bold">ゲーミフィケーター</h1>
+    <p>Boost Your Motivation</p></a>
+  </div>
+    <ul class="flex space-x-4">
+        <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">点数設定</a></li>
+        <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">ごほうび編集</a></li>
+        <!-- auth関連 -->
+        @if (Route::has('login'))
+            @auth
+            <li><a href="{{ url('/home') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Home</a></li>
+            @else
+            <li><a href="{{ route('login') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">{{__('Login')}}</a></li>
+            @if (Route::has('register'))
+                <li><a href="{{ route('register') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">{{__('Register')}}</a></li>
+            @endif
+            @endauth
+        @endif
+        <!-- /auth関連 -->
+    </ul>
+</nav>
+</header>
 
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
-                </div>
-            </div>
-        </nav>
+<!-- スマートフォン用メニュー -->
+<header class="flex flex-col justify-between items-center py-4 px-8 text-gray-800">
+<nav class="sm:hidden p-4">
+    <div>
+<a href="/">
+    <h1 class="text-xl font-bold">ゲーミフィケーター</h1>
+    <p>Boost Your Motivation</p>
+</a>
+  </div>
+    <ul class="flex flex-col space-y-4 py-4">
+        <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">点数設定</a></li>
+        <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">ごほうび編集</a></li>
+        <!-- auth関連 -->
+        @if (Route::has('login'))
+            @auth
+            <li><a href="{{ url('/home') }}" class="block px-4 py-2 text-gray-800 hver:bg-gray-200">Home</a></li>
+            @else
+            <li><a href="{{ route('login') }}" class="block px-4 py-2 text-gray-800 hver:bg-gray-200">{{__('Login')}}</a></li>
+            @if (Route::has('register'))
+                <li><a href="{{ route('register') }}" class="block px-4 py-2 text-gray-800 hver:bg-gray-200">{{__('Register')}}</a></li>
+            @endif
+            @endauth
+        @endif
+        <!-- /auth関連 -->
+    </ul>
+</nav>
+</header>
 
         <main class="py-4">
             @yield('content')
