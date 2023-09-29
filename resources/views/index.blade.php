@@ -15,16 +15,5 @@
         <h2>Entered Number: {{ $number }}</h2>
     @endif
 
-
-<script>
-  // メニューのトグル
-  document.getElementById('menu-toggle').addEventListener('click', function() {
-    var dropdown = document.getElementById('menu-dropdown');
-    dropdown.classList.toggle('hidden');
-    setTimeout(function() {
-      dropdown.classList.toggle('opacity-0');
-    }, 10);
-  });
-</script>
 </div>
 @endsection
