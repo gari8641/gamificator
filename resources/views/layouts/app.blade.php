@@ -6,8 +6,8 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="shortcut icon" href="{{ asset('/images/favicon.ico') }}">
-    <title>{{ config('app.name', 'Laravel') }}</title>
+
+    <title>@yield('title') | {{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -21,51 +21,67 @@
 
     <!-- Your Custom Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-</head>
 
+
+    <link rel="shortcut icon" href="{{ asset('/images/favicon.ico') }}">
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
 
 <body>
 
-    <header class="flex justify-between items-center py-4 px-8 text-gray-800">
-        <div>
-            <a class="navbar-brand" href="{{ url('/') }}">
-                {{ config('app.name', 'ゲーミフィケーター') }}
-            </a>
-        </div>
-        <nav class="hidden sm:block">
-            <ul class="flex space-x-4">
-                <li class="nav-item"><a href="#" class="nav-link">点数設定</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">ごほうび編集</a></li>
-                <!-- auth関連 -->
-                @guest
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                    </li>
-                    @if (Route::has('register'))
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                        </li>
-                    @endif
-                @else
-                    <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }}
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
-                            </a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                @csrf
-                            </form>
-                        </div>
-                    </li>
-                @endguest
-                <!-- /auth関連 -->
-            </ul>
-        </nav>
-    </header>
+<!-- PC用メニュー -->
+<nav class="hidden sm:block p-4">
+<header class="flex justify-between items-center py-4 px-8 text-gray-800">
+    <div>
+    <a href="/"><h1 class="text-xl font-bold">ゲーミフィケーター</h1>
+    <p>Boost Your Motivation</p></a>
+  </div>
+    <ul class="flex space-x-4">
+        <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">点数設定</a></li>
+        <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">ごほうび編集</a></li>
+        <!-- auth関連 -->
+        @if (Route::has('login'))
+            @auth
+            <li><a href="{{ url('/home') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Home</a></li>
+            @else
+            <li><a href="{{ route('login') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">{{__('Login')}}</a></li>
+            @if (Route::has('register'))
+                <li><a href="{{ route('register') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">{{__('Register')}}</a></li>
+            @endif
+            @endauth
+        @endif
+        <!-- /auth関連 -->
+    </ul>
+</nav>
+</header>
 
+<!-- スマートフォン用メニュー -->
+<header class="flex flex-col justify-between items-center py-4 px-8 text-gray-800">
+<nav class="sm:hidden p-4">
+    <div>
+<a href="/">
+    <h1 class="text-xl font-bold">ゲーミフィケーター</h1>
+    <p>Boost Your Motivation</p>
+</a>
+  </div>
+    <ul class="flex flex-col space-y-4 py-4">
+        <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">点数設定</a></li>
+        <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">ごほうび編集</a></li>
+        <!-- auth関連 -->
+        @if (Route::has('login'))
+            @auth
+            <li><a href="{{ url('/home') }}" class="block px-4 py-2 text-gray-800 hver:bg-gray-200">Home</a></li>
+            @else
+            <li><a href="{{ route('login') }}" class="block px-4 py-2 text-gray-800 hver:bg-gray-200">{{__('Login')}}</a></li>
+            @if (Route::has('register'))
+                <li><a href="{{ route('register') }}" class="block px-4 py-2 text-gray-800 hver:bg-gray-200">{{__('Register')}}</a></li>
+            @endif
+            @endauth
+        @endif
+        <!-- /auth関連 -->
+    </ul>
+</nav>
+</header>
 
         <main class="py-4">
             @yield('content')
