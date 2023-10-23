@@ -24,7 +24,7 @@
 
 
     <link rel="shortcut icon" href="{{ asset('/images/favicon.ico') }}">
-<script src="https://cdn.tailwindcss.com"></script>
+<!-- <script src="https://cdn.tailwindcss.com"></script> -->
 </head>
 
 <body>
