@@ -9695,6 +9695,9 @@ video {
 .mb-0{
   margin-bottom: 0px;
 }
+.mr-8{
+  margin-right: 2rem;
+}
 .block{
   display: block;
 }
@@ -9707,11 +9710,17 @@ video {
 .hidden{
   display: none;
 }
+.w-full{
+  width: 100%;
+}
 .flex-col{
   flex-direction: column;
 }
 .items-center{
   align-items: center;
+}
+.justify-end{
+  justify-content: flex-end;
 }
 .justify-center{
   justify-content: center;
@@ -9744,6 +9753,9 @@ video {
 }
 .p-4{
   padding: 1rem;
+}
+.p-8{
+  padding: 2rem;
 }
 .px-4{
   padding-left: 1rem;
