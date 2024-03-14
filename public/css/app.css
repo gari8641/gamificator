@@ -9726,6 +9726,9 @@ video {
 .inline-block{
   display: inline-block;
 }
+.inline{
+  display: inline;
+}
 .flex{
   display: flex;
 }
@@ -9734,6 +9737,9 @@ video {
 }
 .w-full{
   width: 100%;
+}
+.w-8\/12{
+  width: 66.666667%;
 }
 .max-w-lg{
   max-width: 32rem;
@@ -9780,6 +9786,9 @@ video {
 .rounded-full{
   border-radius: 9999px;
 }
+.rounded-lg{
+  border-radius: 0.5rem;
+}
 .border{
   border-width: 1px;
 }
@@ -9793,6 +9802,10 @@ video {
 .border-red-500{
   --tw-border-opacity: 1;
   border-color: rgb(239 68 68 / var(--tw-border-opacity));
+}
+.border-green-400{
+  --tw-border-opacity: 1;
+  border-color: rgb(74 222 128 / var(--tw-border-opacity));
 }
 .bg-blue-500{
   --tw-bg-opacity: 1;
@@ -9814,6 +9827,10 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
+.bg-green-100{
+  --tw-bg-opacity: 1;
+  background-color: rgb(220 252 231 / var(--tw-bg-opacity));
+}
 .p-0{
   padding: 0px;
 }
@@ -9822,6 +9839,9 @@ video {
 }
 .p-8{
   padding: 2rem;
+}
+.p-6{
+  padding: 1.5rem;
 }
 .px-3{
   padding-left: 0.75rem;
@@ -9846,6 +9866,10 @@ video {
 .py-4{
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+.py-3{
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
 }
 .pb-8{
   padding-bottom: 2rem;
@@ -9903,6 +9927,14 @@ video {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
+.text-gray-600{
+  --tw-text-opacity: 1;
+  color: rgb(75 85 99 / var(--tw-text-opacity));
+}
+.text-green-700{
+  --tw-text-opacity: 1;
+  color: rgb(21 128 61 / var(--tw-text-opacity));
+}
 .shadow{
   --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
@@ -9933,6 +9965,9 @@ video {
   --tw-text-opacity: 1;
   color: rgb(30 64 175 / var(--tw-text-opacity));
 }
+.hover\:underline:hover{
+  text-decoration-line: underline;
+}
 .focus\:border-purple-500:focus{
   --tw-border-opacity: 1;
   border-color: rgb(168 85 247 / var(--tw-border-opacity));
@@ -9948,6 +9983,9 @@ video {
 @media (min-width: 640px){
   .sm\:block{
     display: block;
+  }
+  .sm\:inline{
+    display: inline;
   }
   .sm\:hidden{
     display: none;
