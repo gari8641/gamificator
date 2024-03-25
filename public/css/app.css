@@ -9732,6 +9732,9 @@ video {
 .hidden{
   display: none;
 }
+.w-1\/2{
+  width: 50%;
+}
 .w-8\/12{
   width: 66.666667%;
 }
