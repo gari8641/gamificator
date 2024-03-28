@@ -43,6 +43,20 @@
         @if (Route::has('login'))
             @auth
             <li><a href="{{ url('/home') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Home</a></li>
+
+
+
+            <li><a href="{{ route('logout') }}"
+            onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">
+                ログアウト
+            </a></li>
+
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
+
+
+
             @else
             <li><a href="{{ route('login') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">{{__('Login')}}</a></li>
             @if (Route::has('register'))
@@ -71,6 +85,20 @@
         @if (Route::has('login'))
             @auth
             <li><a href="{{ url('/home') }}" class="block px-4 py-2 text-gray-800 hver:bg-gray-200">Home</a></li>
+
+
+
+            <li><a href="{{ route('logout') }}"
+            onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="block px-4 py-2 text-gray-800 hver:bg-gray-200">
+                ログアウト
+            </a></li>
+
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
+
+
+
             @else
             <li><a href="{{ route('login') }}" class="block px-4 py-2 text-gray-800 hver:bg-gray-200">{{__('Login')}}</a></li>
             @if (Route::has('register'))
