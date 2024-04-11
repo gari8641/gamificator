@@ -42,7 +42,7 @@
         <!-- auth関連 -->
         @if (Route::has('login'))
             @auth
-            <li><a href="{{ url('/home') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Home</a></li>
+            <li><a href="{{ url('/home') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">{{ Auth::user()->name }}</a></li>
 
 
 
@@ -84,8 +84,7 @@
         <!-- auth関連 -->
         @if (Route::has('login'))
             @auth
-            <li><a href="{{ url('/home') }}" class="block px-4 py-2 text-gray-800 hver:bg-gray-200">Home</a></li>
-
+            <li><a href="{{ url('/home') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">{{ Auth::user()->name }}</a></li>
 
 
             <li><a href="{{ route('logout') }}"
