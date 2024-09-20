@@ -3,9 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Services\UserService;
 
 class NumberController extends Controller
 {
+    protected $userService;
+
+    public function __construct(UserService $userService)
+    {
+        $this->userService = $userService;
+    }
+
     //
     public function index()
     {
@@ -16,9 +24,12 @@ class NumberController extends Controller
     {
         $number = $request->input('number');
 
-        //ランダムな数をかける
-        $number = $number * rand(-1,6);
+        // ランダムな数をかける
+        $number = $number * rand(-1, 6);
 
-        return view('index', compact('number'));
+        // ユーザーのスコアを取得
+        $score = $this->userService->getUserScore();
+
+        return view('index', compact('number', 'score'));
     }
 }
