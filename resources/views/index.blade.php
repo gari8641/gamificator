@@ -18,7 +18,9 @@
         <h2>獲得点数: {{ $number }}</h2>
     @endif
 
+    @auth
     <h2>合計ポイント: {{ $score ?? 'ポイントが取得できませんでした' }}</h2>
+    @endauth
 
 </div>
 @endsection
