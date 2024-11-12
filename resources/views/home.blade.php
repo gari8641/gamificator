@@ -15,6 +15,9 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+                    <p>
+                        <a href="{{ route('password.request') }}">パスワード変更</a>
+                    </p>
                 </div>
             </div>
         </div>
