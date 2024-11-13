@@ -33,8 +33,8 @@
 <nav class="hidden sm:block p-4">
 <header class="flex justify-between items-center py-4 px-8 text-gray-800">
     <div>
-    <a href="/"><h1 class="text-xl font-bold">ゲーミフィケーター</h1>
-    <p>Boost Your Motivation</p></a>
+    <a href="/"><h1 class="text-xl font-bold text-black">ゲーミフィケーター</h1>
+    <p class="text-black">Boost Your Motivation</p></a>
   </div>
     <ul class="flex space-x-4">
         <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">点数設定</a></li>
@@ -74,8 +74,8 @@
 <nav class="sm:hidden p-4">
     <div>
 <a href="/">
-    <h1 class="text-xl font-bold">ゲーミフィケーター</h1>
-    <p>Boost Your Motivation</p>
+    <h1 class="text-xl font-bold text-black">ゲーミフィケーター</h1>
+    <p class="text-black">Boost Your Motivation</p>
 </a>
   </div>
     <ul class="flex flex-col space-y-4 py-4">
