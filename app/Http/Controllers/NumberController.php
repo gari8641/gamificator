@@ -30,9 +30,6 @@ class NumberController extends Controller
         // ランダムな数値を掛ける（範囲: -1 ～ 6）
         $number = $number * rand(-1, 6);
 
-        // ユーザーのスコアを取得（任意のサービス）
-        $score = $this->userService->getUserScore();
-
         // 現在ログインしているユーザーを取得
         $user = Auth::user();
 
@@ -44,6 +41,9 @@ class NumberController extends Controller
                 'user_id' => $user->id,   // ログイン中のユーザーID
             ]);
         }
+
+        // ユーザーのスコアを取得（任意のサービス）
+        $score = $this->userService->getUserScore();
 
         // ビューへデータを渡して表示
         return view('index', compact('number', 'score'));
