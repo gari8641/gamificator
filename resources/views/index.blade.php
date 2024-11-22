@@ -8,7 +8,7 @@
     </div> -->
     <form action="{{ route('number.show') }}" method="post" class="inline-block bg-red-200 hover:bg-red-400 py-2 px-6 rounded-full shadow-md">
         @csrf
-        <input type="number" name="number">
+        <input type="number" name="number" value="50">
         <button type="submit">Submit</button>
     </form>
 
