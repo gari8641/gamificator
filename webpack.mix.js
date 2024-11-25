@@ -18,5 +18,7 @@ mix.js('resources/js/app.js', 'public/js').vue()
     .options({
         processCssUrls: false,
         postCss: [ tailwindcss('./tailwind.config.js') ],
-    });
+    })
+    .js('resources/js/top.js', 'public/js');
+
 

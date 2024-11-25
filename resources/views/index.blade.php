@@ -34,9 +34,5 @@
     @endauth
 
 </div>
-<script>
-    function setNumber(value) {
-        document.getElementById('numberinput').value = value;
-    }
-</script>
+<script src="{{ mix('/js/top.js') }}"></script>
 @endsection
