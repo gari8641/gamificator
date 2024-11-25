@@ -9711,6 +9711,9 @@ video {
 .mr-2{
   margin-right: 0.5rem;
 }
+.mt-2{
+  margin-top: 0.5rem;
+}
 .mt-4{
   margin-top: 1rem;
 }
@@ -9803,6 +9806,10 @@ video {
 .border-red-500{
   --tw-border-opacity: 1;
   border-color: rgb(239 68 68 / var(--tw-border-opacity));
+}
+.bg-blue-200{
+  --tw-bg-opacity: 1;
+  background-color: rgb(191 219 254 / var(--tw-bg-opacity));
 }
 .bg-blue-500{
   --tw-bg-opacity: 1;
@@ -9946,6 +9953,10 @@ video {
 a{
   --tw-text-opacity: 1;
   color: rgb(29 161 242 / var(--tw-text-opacity));
+}
+.hover\:bg-blue-400:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(96 165 250 / var(--tw-bg-opacity));
 }
 .hover\:bg-blue-700:hover{
   --tw-bg-opacity: 1;
