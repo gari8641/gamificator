@@ -7,7 +7,7 @@
         <img src="images/moti-logo2.png">
     </div> -->
 
-    <div class="flex space-x-4">
+    <div class="flex space-x-4 py-2">
 
         <button type="button" class="bg-blue-200 hover:bg-blue-400 py-2 px-6 rounded-full shadow-md mt-2" onclick="setNumber(30)">
             30
@@ -17,10 +17,10 @@
         </button>
     </div>
         
-        <form action="{{ route('number.show') }}" method="post" class="inline-block bg-red-200 hover:bg-red-400 py-2 px-6 rounded-full shadow-md">
+        <form action="{{ route('number.show') }}" method="post" class="inline-block bg-blue-500 hover:bg-blue-700 py-2 px-6 rounded-full shadow-md">
             @csrf
             <input id="numberinput" type="number" name="number" value="50">
-            <button type="submit">Submit</button>
+            <button type="submit" class="text-white">採点</button>
         </form>
 
 
