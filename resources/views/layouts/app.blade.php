@@ -37,11 +37,11 @@
     <p class="text-black">Boost Your Motivation</p></a>
   </div>
     <ul class="flex space-x-4">
-        <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">点数設定</a></li>
-        <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">ごほうび編集</a></li>
         <!-- auth関連 -->
         @if (Route::has('login'))
             @auth
+            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">点数設定</a></li>
+            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">ごほうび編集</a></li>
             <li><a href="{{ url('/home') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">{{ Auth::user()->name }}</a></li>
 
 
@@ -79,11 +79,11 @@
 </a>
   </div>
     <ul class="flex flex-col space-y-4 py-4">
-        <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">点数設定</a></li>
-        <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">ごほうび編集</a></li>
         <!-- auth関連 -->
         @if (Route::has('login'))
             @auth
+            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">点数設定</a></li>
+            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">ごほうび編集</a></li>
             <li><a href="{{ url('/home') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">{{ Auth::user()->name }}</a></li>
 
 
