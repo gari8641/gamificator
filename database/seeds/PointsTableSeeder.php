@@ -12,7 +12,12 @@ class PointsTableSeeder extends Seeder
     public function run()
     {
         //
+      $param = [
       'user_id' => 1,
-      'point' => 0,
+      'point' => 2,
+      'created_at' => '2024-06-10 22:09',
+      'updated_at' => '2024-06-10 22:09',
+      ];
+      DB::table('points')->insert($param);
     }
 }

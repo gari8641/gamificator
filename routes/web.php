@@ -25,3 +25,5 @@ Route::post('/show', 'NumberController@show')->name('number.show');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
